@@ -16,4 +16,10 @@ class RightCommandTest < Minitest::Unit::TestCase
     command.expects(:turn).with(state, :right)
     command.run(state)
   end
+
+  def test_with_inactive_state
+    inactive_state = GameState.create_inactive
+    command.expects(:turn).never
+    command.run(inactive_state)
+  end
 end
