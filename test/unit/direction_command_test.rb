@@ -1,9 +1,12 @@
-require "minitest/autorun"
+require_relative "../test_helper"
 
-require_relative "../direction_command"
-require_relative "../game_state"
+require "minitest/autorun"
+require "robot_movement/direction_command"
+require "robot_movement/game_state"
 
 class DirectionCommandTest < Minitest::Unit::TestCase
+  include RobotMovement
+
   attr_reader :state, :command
 
   def setup

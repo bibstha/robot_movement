@@ -1,9 +1,13 @@
+require_relative "../test_helper"
+
 require "minitest/autorun"
 
-require_relative "../place_command"
-require_relative "../game_state"
+require "robot_movement/place_command"
+require "robot_movement/game_state"
 
 class PlaceCommandTest < Minitest::Unit::TestCase
+  include RobotMovement
+
   def test_initialize_valid_game_state
     PlaceCommand.new(1, 2, "west")
   end

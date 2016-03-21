@@ -1,10 +1,14 @@
+require_relative "../test_helper"
+
 require "minitest/autorun"
 require "mocha/mini_test"
 
-require_relative "../left_command"
-require_relative "../game_state"
+require "robot_movement/left_command"
+require "robot_movement/game_state"
 
 class LeftCommandTest < Minitest::Unit::TestCase
+  include RobotMovement
+
   attr_reader :state, :command
 
   def setup
@@ -19,7 +23,6 @@ class LeftCommandTest < Minitest::Unit::TestCase
 
   def test_with_inactive_state
     inactive_state = GameState.create_inactive
-    command.expects(:turn).never
-    command.run(inactive_state)
+    assert_raises (InvalidGameState) { command.run(inactive_state) }
   end
 end
