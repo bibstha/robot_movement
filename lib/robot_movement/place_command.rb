@@ -24,7 +24,8 @@ module RobotMovement
     def validate
       raise ArgumentError, "x should be within 0..4" unless (0..4).include?(x)
       raise ArgumentError, "y should be within 0..4" unless (0..4).include?(y)
-      raise ArgumentError, "direction should be one of east|west|north|south" unless ValidDirections.include?(direction)
+      raise ArgumentError, "direction #{direction} should be one of" \
+        "east|west|north|south" unless ValidDirections.include?(direction)
     end
   end
 end

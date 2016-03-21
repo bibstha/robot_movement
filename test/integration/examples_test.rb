@@ -58,6 +58,6 @@ class ExamplesTest < Minitest::Test
     expect_output("1,1,NORTH")
 
     cli.stubs(:filename).returns("test/examples/1.txt")
-    cli.execute_file
+    cli.run
   end
 end

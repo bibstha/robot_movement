@@ -1,9 +1,5 @@
 require_relative "game_state"
-require_relative "place_command"
-require_relative "left_command"
-require_relative "right_command"
-require_relative "move_command"
-require_relative "report_command"
+require_relative "command_factory"
 
 module RobotMovement
   class Cli
@@ -44,15 +40,7 @@ module RobotMovement
     end
 
     def parse(line)
-      command_name, args = line.downcase.split(" ")
-      klass = RobotMovement.const_get("#{command_name.capitalize}Command")
-      if klass == PlaceCommand
-        klass.new(*args.split(","))
-      else
-        klass.new
-      end
-    rescue NameError
-      raise InvalidCommand, "Command #{command_name} not found"
+      CommandFactory.create_from(line)
     end
 
     def filename
