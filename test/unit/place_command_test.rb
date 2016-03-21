@@ -12,6 +12,13 @@ class PlaceCommandTest < Minitest::Unit::TestCase
     PlaceCommand.new(1, 2, "west")
   end
 
+  def test_initialize_with_string
+    command = PlaceCommand.new("1", "2", "west")
+    assert_equal(1, command.x)
+    assert_equal(2, command.y)
+    assert_equal("west", command.direction)
+  end
+
   def test_initialize_invalid_game_state
     assert_raises (ArgumentError) { PlaceCommand.new(-1, 2, "west") }
     assert_raises (ArgumentError) { PlaceCommand.new(5, 2, "east") }
@@ -28,6 +35,7 @@ class PlaceCommandTest < Minitest::Unit::TestCase
     assert_equal(1, state.x)
     assert_equal(2, state.y)
     assert_equal("north", state.direction)
+    assert(state.active?)
   end
 
   def test_change_of_game_state_2

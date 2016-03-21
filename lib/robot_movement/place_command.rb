@@ -3,8 +3,8 @@ module RobotMovement
     attr_reader :x, :y, :direction
 
     def initialize(x, y, direction)
-      @x = x
-      @y = y
+      @x = x.to_i
+      @y = y.to_i
       @direction = direction
 
       validate
@@ -14,6 +14,7 @@ module RobotMovement
       state.x = x
       state.y = y
       state.direction = direction
+      state.active = true
     end
 
     private
