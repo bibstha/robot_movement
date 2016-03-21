@@ -24,7 +24,7 @@ class CliTest < Minitest::Test
     MoveCommand.any_instance.expects("run").once
     LeftCommand.any_instance.expects("run").once
 
-    lines = ["MOVE", "LEFT"]
+    lines = %w(MOVE LEFT)
     cli.execute_lines(lines)
   end
 end

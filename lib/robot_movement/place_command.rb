@@ -19,11 +19,11 @@ module RobotMovement
 
     private
 
-    ValidDirections = %w(north east south west)
+    ValidDirections = %w(north east south west).freeze
 
     def validate
-      raise ArgumentError, "x should be within 0..4" unless (0..4).include?(x)
-      raise ArgumentError, "y should be within 0..4" unless (0..4).include?(y)
+      raise ArgumentError, "x should be within 0..4" unless (0..4).cover?(x)
+      raise ArgumentError, "y should be within 0..4" unless (0..4).cover?(y)
       raise ArgumentError, "direction #{direction} should be one of" \
         "east|west|north|south" unless ValidDirections.include?(direction)
     end

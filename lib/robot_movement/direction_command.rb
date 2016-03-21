@@ -1,6 +1,6 @@
 module RobotMovement
   class DirectionCommand
-    Directions = ["north", "east", "south", "west"]
+    Directions = %w(north east south west).freeze
 
     def turn(state, direction)
       current_direction = Directions.index(state.direction)

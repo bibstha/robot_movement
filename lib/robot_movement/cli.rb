@@ -11,13 +11,13 @@ module RobotMovement
     def verify_arguments
       unless filename
         puts "Invalid Syntax"
-        puts "Usage: #{$0} input_file"
+        puts "Usage: {$PROGRAM_NAME} input_file"
         exit(1)
       end
 
       unless File.exist?(filename)
         puts "File #{filename} does not exist"
-        puts "Usage: #{$0} input_file"
+        puts "Usage: {$PROGRAM_NAME} input_file"
         exit(1)
       end
     end
