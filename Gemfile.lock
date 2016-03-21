@@ -4,6 +4,8 @@ GEM
     awesome_print (1.6.1)
     byebug (8.2.2)
     coderay (1.1.1)
+    docile (1.1.5)
+    json (1.8.3)
     metaclass (0.0.4)
     method_source (0.8.2)
     mocha (1.1.0)
@@ -15,6 +17,12 @@ GEM
     pry-byebug (3.3.0)
       byebug (~> 8.0)
       pry (~> 0.10)
+    rake (11.1.1)
+    simplecov (0.11.2)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     slop (3.6.0)
 
 PLATFORMS
@@ -24,6 +32,8 @@ DEPENDENCIES
   awesome_print
   mocha
   pry-byebug
+  rake
+  simplecov
 
 BUNDLED WITH
    1.11.2
