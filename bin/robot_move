@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require_relative "../lib/robot_movement/cli"
+cli = RobotMovement::Cli.new
+cli.run
