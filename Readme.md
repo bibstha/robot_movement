@@ -142,7 +142,8 @@ where validation and state changes occur.
 All `commands` could have a common Ancestor (Inheritence). However, all the
 commands follow the pattern: their constructor arguments are in line with their
 real arguments as string. They all have a `run` method that takes a `state` and
-operates on the state.
+operates on the state. Therefore Inheritence is not really necessary here at
+this moment.
 
 To add new command, one needs to simply add it the `lib/robot_movement` folder
 and will be loaded by the `CommandFactory`.
@@ -153,9 +154,10 @@ All code is distributed under the MIT License.
 
 ## About Bibek Shrestha
 
-[Bibek Shrestha](http://www.bibekshrestha.com) is a Nepal born, Austria based 
+[Bibek Shrestha](http://www.bibekshrestha.com) is a Nepal born, Austria based
 Software Engineer who loves to program in Ruby. He is always interested in
 creative projects. When he is not programming, you can find him hiking and
 running in the Austrian mountains.
 
-Looking for a Ruby Programmer? Contact [bibekshrestha@gmail.com](bibekshrestha@gmail.com)
+Looking for a Ruby Programmer? Contact
+[bibekshrestha@gmail.com](mailto:bibekshrestha@gmail.com)
