@@ -4,3 +4,6 @@ if ENV["ENABLE_COVERAGE"] == "1"
   require "simplecov"
   SimpleCov.start
 end
+
+require "minitest/pride"
+require "minitest/autorun"

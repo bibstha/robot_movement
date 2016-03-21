@@ -1,6 +1,5 @@
 require_relative "../test_helper"
 
-require "minitest/autorun"
 require "robot_movement/game_state"
 
 class GameStateTest < Minitest::Test

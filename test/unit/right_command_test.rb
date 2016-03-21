@@ -1,8 +1,5 @@
 require_relative "../test_helper"
 
-require "minitest/autorun"
-require "mocha/mini_test"
-
 require "robot_movement/right_command"
 require "robot_movement/game_state"
 require "robot_movement/errors"

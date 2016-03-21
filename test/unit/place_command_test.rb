@@ -1,7 +1,5 @@
 require_relative "../test_helper"
 
-require "minitest/autorun"
-
 require "robot_movement/place_command"
 require "robot_movement/game_state"
 
