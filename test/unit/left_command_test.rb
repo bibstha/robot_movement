@@ -6,7 +6,7 @@ require "mocha/mini_test"
 require "robot_movement/left_command"
 require "robot_movement/game_state"
 
-class LeftCommandTest < Minitest::Unit::TestCase
+class LeftCommandTest < Minitest::Test
   include RobotMovement
 
   attr_reader :state, :command

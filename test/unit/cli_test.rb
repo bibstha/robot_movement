@@ -10,7 +10,7 @@ require "robot_movement/move_command"
 require "robot_movement/report_command"
 require "robot_movement/errors"
 
-class CliTest < Minitest::Unit::TestCase
+class CliTest < Minitest::Test
   include RobotMovement
 
   attr_reader :cli
@@ -41,5 +41,13 @@ class CliTest < Minitest::Unit::TestCase
 
   def test_parse_invalid
     assert_raises (InvalidCommand) { cli.parse("INVALIDCOMMAND") }
+  end
+
+  def test_execute_lines
+    MoveCommand.any_instance.expects("run").once
+    LeftCommand.any_instance.expects("run").once
+
+    lines = ["MOVE", "LEFT"]
+    cli.execute_lines(lines)
   end
 end

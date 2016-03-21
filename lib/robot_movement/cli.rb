@@ -8,12 +8,11 @@ require_relative "report_command"
 module RobotMovement
   class Cli
     def run
-      filename = ARGV[0]
-      verify_arguments(filename)
-      execute_file(filename)
+      verify_arguments
+      execute_file
     end
 
-    def verify_arguments(filename)
+    def verify_arguments
       unless filename
         puts "Invalid Syntax"
         puts "Usage: #{$0} input_file"
@@ -27,8 +26,8 @@ module RobotMovement
       end
     end
 
-    def execute_file(filename)
-      lines = File.readlines(filename)
+    def execute_file
+      lines = File.readlines(filename).map!(&:chomp)
       execute_lines(lines)
     end
 
@@ -36,7 +35,7 @@ module RobotMovement
       state = GameState.create_inactive
       lines.each do |line|
         begin
-          command = parse(line.chomp)
+          command = parse(line)
           command.run(state)
         rescue InvalidGameState
           # do nothing
@@ -54,6 +53,10 @@ module RobotMovement
       end
     rescue NameError
       raise InvalidCommand, "Command #{command_name} not found"
+    end
+
+    def filename
+      ARGV[0]
     end
   end
 end

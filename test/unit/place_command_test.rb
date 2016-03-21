@@ -5,7 +5,7 @@ require "minitest/autorun"
 require "robot_movement/place_command"
 require "robot_movement/game_state"
 
-class PlaceCommandTest < Minitest::Unit::TestCase
+class PlaceCommandTest < Minitest::Test
   include RobotMovement
 
   def test_initialize_valid_game_state

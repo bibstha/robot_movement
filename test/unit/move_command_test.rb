@@ -8,7 +8,7 @@ require "robot_movement/game_state"
 require "robot_movement/errors"
 
 module RobotMovement
-  class MoveCommandTest < Minitest::Unit::TestCase
+  class MoveCommandTest < Minitest::Test
     attr_reader :command
 
     def setup

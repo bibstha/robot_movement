@@ -3,7 +3,7 @@ require_relative "../test_helper"
 require "minitest/autorun"
 require "robot_movement/game_state"
 
-class GameStateTest < Minitest::Unit::TestCase
+class GameStateTest < Minitest::Test
   include RobotMovement
 
   def test_active?

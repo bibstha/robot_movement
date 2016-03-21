@@ -4,7 +4,7 @@ require "minitest/autorun"
 require "mocha/mini_test"
 require "robot_movement/cli"
 
-class ExamplesTest < Minitest::Unit::TestCase
+class ExamplesTest < Minitest::Test
   include RobotMovement
 
   attr_reader :cli
@@ -52,5 +52,12 @@ class ExamplesTest < Minitest::Unit::TestCase
       "REPORT"
     ]
     cli.execute_lines(commands)
+  end
+
+  def test_example_4_with_file
+    expect_output("1,1,NORTH")
+
+    cli.stubs(:filename).returns("test/examples/1.txt")
+    cli.execute_file
   end
 end

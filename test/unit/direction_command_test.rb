@@ -4,7 +4,7 @@ require "minitest/autorun"
 require "robot_movement/direction_command"
 require "robot_movement/game_state"
 
-class DirectionCommandTest < Minitest::Unit::TestCase
+class DirectionCommandTest < Minitest::Test
   include RobotMovement
 
   attr_reader :state, :command

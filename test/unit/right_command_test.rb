@@ -7,7 +7,7 @@ require "robot_movement/right_command"
 require "robot_movement/game_state"
 require "robot_movement/errors"
 
-class RightCommandTest < Minitest::Unit::TestCase
+class RightCommandTest < Minitest::Test
   include RobotMovement
 
   attr_reader :state, :command
